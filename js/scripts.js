@@ -7,7 +7,14 @@ function error(decimalNumber) {
     return "error: negative";
   }
 }
-
+function makeRoman(decimalNumber) {
+  var numberError = error(decimalNumber);
+  if (numberError) {
+    return numberError;
+  } else if(decimalNumber === 0) {
+    return "nulla";
+  }
+}
 
 
 // User Interface logic
@@ -16,6 +23,6 @@ $(document).ready(function() {
   $("#number").submit(function(event) {
     event.preventDefault();
     var decimalNumber = parseInt($("input#decimal-number").val());
-    console.log(error(decimalNumber));
+    console.log(makeRoman(decimalNumber));
   });
 });
