@@ -1,3 +1,19 @@
+# _Roman Numeral Converter_
+
+#### _Epicodus practice in Javascript, 8.17.2017_
+
+#### By _**Megan Olson and Kelsey Langlois**_
+
+## Description
+
+_This page has a form that allows the user to enter a number. After pressing the submit button, the user will receive the number they entered as a roman numeral._
+
+## Setup/Installation Requirements
+
+* _Clone GitHub repository_
+* _Open folder named roman-numerals_
+* _Open index.html with web browser of choice_
+
 ## Specifications
 
 * Program returns an error when the input is empty.
@@ -30,3 +46,20 @@
 * Program returns a separate group of numerals for 1s, 10s, 100s, and 1000s of input.
  * Example Input: 99
  * Example Output: "XCIX"
+
+ ## Known Bugs
+
+ _There are no known bugs at this time._
+
+ ## Support and contact details
+
+ _Feel free to email Kelsey at kels.langlois@gmail.com or Megan at meganannetteolson@yahoo.com_
+
+ ## Technologies Used
+
+ _HTML CSS JavaScript jQuery_
+
+ ### License
+
+ *This software is licensed under the MIT license*
+ Copyright (c) 2017 **Megan Olson and Kelsey Langlois**
