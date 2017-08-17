@@ -4,8 +4,8 @@
   * Example Input: ""
   * Example Output: "Error: empty field"
 * Program returns an error when the input is not an integer.
-  * Example Input: 3.14PIE
-  * Example Output: "Error: NaN"
+  * Example Input: 3.14
+  * Example Output: "Error: please enter a valid value"
 * Program returns an error when the input is negative.
   * Example Input: -5
   * Example Output: "Error: Negative"
