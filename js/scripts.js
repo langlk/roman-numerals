@@ -64,6 +64,6 @@ $(document).ready(function() {
   $("#number").submit(function(event) {
     event.preventDefault();
     var decimalNumber = parseInt($("input#decimal-number").val());
-    console.log(makeRoman(decimalNumber));
+    $("#result").text(makeRoman(decimalNumber));
   });
 });
