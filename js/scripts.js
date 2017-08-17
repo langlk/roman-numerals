@@ -15,23 +15,21 @@ function makeColumnRoman(decimalNumber) {
   var numeralTotal = 0;
   var result = "";
   for (var index = numeralValues.length - 1; index >= 0; index--) {
-    var currentValue = numeralValues[index];
     var numeralCount = 0;
-    while (numeralTotal + currentValue <= decimalNumber) {
+    while (numeralTotal + numeralValues[index] <= decimalNumber) {
       numeralCount += 1;
       if (numeralCount > 3) {
-        var greaterVal = numeralTotal + 2 * currentValue;
-        var greaterValIndex = numeralValues.indexOf(greaterVal);
-        numeralTotal += (greaterVal - currentValue);
+        var greaterVal = numeralTotal + 2 * numeralValues[index];
+        numeralTotal += (greaterVal - numeralValues[index]);
         var resultIndex = result.length - 1;
         while (numeralTotal > decimalNumber && resultIndex >= 0) {
           var thisNumeral = result.charAt(resultIndex);
           numeralTotal -= numeralValues[numerals.indexOf(thisNumeral)];
           resultIndex -= 1;
         }
-        result = result.substring(0, resultIndex) + numerals[index] + numerals[greaterValIndex];
+        result = result.substring(0, resultIndex) + numerals[index] + numerals[numeralValues.indexOf(greaterVal)];
       } else {
-        numeralTotal += currentValue;
+        numeralTotal += numeralValues[index];
         result += numerals[index];
       }
     }
@@ -49,9 +47,8 @@ function makeRoman(decimalNumber) {
     var result = "";
     var place = 10;
     while (decimalNumber > 0) {
-      var column = decimalNumber % place;
-      result = makeColumnRoman(column) + result;
-      decimalNumber -= column;
+      result = makeColumnRoman(decimalNumber % place) + result;
+      decimalNumber -= decimalNumber % place;
       place *= 10;
     }
     return result;
