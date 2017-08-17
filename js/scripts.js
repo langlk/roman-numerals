@@ -1,6 +1,7 @@
 // business logic
 
 var numerals = {1: "I", 5: "V", 10: "X", 50: "L", 100: "C", 500: "D", 1000: "M"};
+var numeralValues = [1, 5, 10, 50, 100, 500, 1000];
 
 function error(decimalNumber) {
   if (!Number.isInteger(decimalNumber)) {
@@ -18,6 +19,17 @@ function makeRoman(decimalNumber) {
     return "nulla";
   } else if (numerals.hasOwnProperty(decimalNumber)) {
     return numerals[decimalNumber];
+  } else {
+    var numeralTotal = 0;
+    var result = "";
+    for (var index = numeralValues.length - 1; index >= 0; index--) {
+      var currentValue = numeralValues[index];
+      while (numeralTotal + currentValue <= decimalNumber) {
+        numeralTotal += currentValue;
+        result += numerals[currentValue];
+      }
+    }
+    return result;
   }
 }
 
