@@ -1,8 +1,8 @@
 ## Specifications
 
-* Program returns an empty string when the input is empty.
+* Program returns an error when the input is empty.
   * Example Input: ""
-  * Example Output: ""
+  * Example Output: "Error: empty field"
 * Program returns an error when the input is not an integer.
   * Example Input: 3.14PIE
   * Example Output: "Error: NaN"
