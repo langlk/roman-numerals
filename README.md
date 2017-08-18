@@ -1,6 +1,6 @@
 # _Roman Numeral Converter_
 
-#### _Epicodus practice in Javascript, 8.19.2017_
+#### _Epicodus practice in Javascript, 8.18.2017_
 
 #### By _**Megan Olson and Kelsey Langlois**_
 
