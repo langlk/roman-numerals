@@ -12,21 +12,6 @@ function error(decimalNumber) {
   }
 }
 
-function makeColumnRoman(decimalNumber) {
-  var numeralTotal = 0; // Keep track of total value of our Roman Numeral string so far.
-  var result = "";
-  for (var index = numeralValues.length - 1; index >= 0; index--) {
-    // Go through our possible numeral values, starting with the biggest.
-    var numeralCount = 0; // We want to keep track of how many of a numeral we've added
-    while (numeralTotal + numeralValues[index] <= decimalNumber) {
-      // If a numeral is small enough to add to the numeral string without going over our decimal ammount, we add it as many times as we can without going over the decimal ammount.
-        numeralTotal += numeralValues[index];
-        result += numerals[index];
-    }
-  }
-  return result;
-}
-
 function makeRoman(decimalNumber) {
   var numberError = error(decimalNumber);
   if (numberError) { // Find out if we have an illegal input
@@ -35,12 +20,15 @@ function makeRoman(decimalNumber) {
     return "nulla";
   } else { // We need to convert each column (10s, etc) individually
     var result = "";
-    var place = 10; // What place (10s, 100s, etc) we're converting
-    while (decimalNumber > 0) {
-      result = makeColumnRoman(decimalNumber % place) + result;
-      // Since we go from smallest place to largest, add result to front of Roman Numeral string
-      decimalNumber -= decimalNumber % place;
-      place *= 10;
+    var numeralTotal = 0;
+    for (var index = numeralValues.length - 1; index >= 0; index--) {
+      // Go through our possible numeral values, starting with the biggest.
+      var numeralCount = 0; // We want to keep track of how many of a numeral we've added
+      while (numeralTotal + numeralValues[index] <= decimalNumber) {
+        // If a numeral is small enough to add to the numeral string without going over our decimal ammount, we add it as many times as we can without going over the decimal ammount.
+          numeralTotal += numeralValues[index];
+          result += numerals[index];
+      }
     }
     return result;
   }
@@ -49,8 +37,6 @@ function makeRoman(decimalNumber) {
 // User Interface logic
 
 $(document).ready(function() {
-  console.log(numerals.length);
-  console.log(numeralValues.length);
   $("#number").submit(function(event) {
     event.preventDefault();
     var decimalNumber = parseInt($("input#decimal-number").val());
