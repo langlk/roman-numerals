@@ -4,7 +4,7 @@
   "description": "#### _Epicodus practice in Javascript, 8.18.2017_",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "nyc karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "bower-files": "^4.0.0",
     "browser-sync": "^2.18.13",
     "browserify": "^14.4.0",
+    "browserify-istanbul": "^2.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -33,10 +34,17 @@
     "karma-browserify": "^5.1.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-jquery": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "nyc": "^11.2.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "karma-coverage": "^1.1.1",
+    "phantomjs": "^2.1.7"
   }
 }
