@@ -28,7 +28,7 @@ module.exports = function(config) {
       transform: [
         [
           istanbul({
-          ignore: ["node_modules/**", "**/*.spec.js"],
+          ignore: ["node_modules/**", "**/*.spec.js", "**/*-interface.js"],
           includeUntested: false,
           defaultIgnore: true
           }),
