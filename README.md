@@ -2,7 +2,7 @@
 
 #### _Epicodus practice in Javascript, 8.18.2017_
 
-#### By _**Megan Olson and Kelsey Langlois**_
+#### By _**Rafael Furry, Kelsey Langlois, and Megan Olson**_
 
 ## Description
 
@@ -57,9 +57,14 @@ _This page has a form that allows the user to enter a number. After pressing the
 
  ## Technologies Used
 
- _HTML CSS JavaScript jQuery_
+ * HTML 
+ * CSS 
+ * JavaScript
+ * jQuery
+ * Node.js
 
  ### License
 
  *This software is licensed under the MIT license*
- Copyright (c) 2017 **Megan Olson and Kelsey Langlois**
+ 
+ Copyright (c) 2017 **Rafael Furry, Kelsey Langlois, and Megan Olson**
